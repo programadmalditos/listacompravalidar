@@ -17,12 +17,12 @@
         </th>
         <th>Operaciones</th>
     </tr>
-    <tr *ngFor="let item of productos; let i = index">
+    <tr *ngFor="let item of productos; let i = index" UnidadesPendientes [Valor]="item.unidades">
         <td>
             {{i}} - {{item.id}}
         </td>
         <td>
-            {{item.nombre}}
+            {{item.nombre | uppercase}}
         </td>
         <td>
             {{item.descripcion}}
@@ -31,7 +31,7 @@
             {{item.unidades}}
         </td>
         <td>
-            {{item.precio}} €
+            {{item.precio | Moneda:'$'}}
         </td>
         <td>
             <button class="btn btn-primary" (click)="modificarProducto(item)"><i class="glyphicon glyphicon-pencil"></i></button>

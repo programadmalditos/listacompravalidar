@@ -16,11 +16,14 @@ import { ListaTiendaApiService } from './Services/listaTiendasApi-service/listaT
 import { AuthService } from './Services/auth-service/Auth-service';
 import { routing } from './Routes/app.routing';
 import { AuthGuard } from './guards/auth-guard';
+import { MonedaPipe } from './Pipes/FormatoMoneda.Pipe';
+import { UnidadesDirective } from './Directives/UnidadesPendientes.Directive';
+
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpModule, Ng2Bs3ModalModule, routing],
-  declarations: [AppComponent, FormularioProductoComponent, ListadoProductosComponent, DefaultComponent, LoginComponent, 
-                ListadoTiendasComponent, FormularioEditTiendaComponent],
+  declarations: [AppComponent, FormularioProductoComponent, ListadoProductosComponent, DefaultComponent, LoginComponent,
+    ListadoTiendasComponent, FormularioEditTiendaComponent, MonedaPipe, UnidadesDirective],
   bootstrap: [DefaultComponent],
   providers: [ListaComraFileService, ListaCompraApiService, ListaTiendaApiService, AuthService, AuthGuard]
 })
